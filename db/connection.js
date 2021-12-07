@@ -9,7 +9,8 @@ const db = mongoose.connection;
 
 //connect to mongo
 mongoose.connect(
-    mongoURI, {
+    mongoURI,
+    {
         useNewUrlParser:true,
         useUnifiedTopology: true,
     },

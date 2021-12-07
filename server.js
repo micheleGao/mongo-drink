@@ -26,10 +26,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
 	res.redirect('/drinks');
 });
+
 // drink Routes
+const Drinks = require('./models/drinks.js')
 const drinkRoutes = require('./controllers/drinks.js');
 app.use('/drinks', drinkRoutes);
-
 //=============================================================================
 // START SERVER
 //=============================================================================

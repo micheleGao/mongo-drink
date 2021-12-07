@@ -7,10 +7,10 @@ const mongoose = require('../db/connection');
 
 const drinkSchema = new mongoose.Schema(
     {
-        strDrink:String,
-        strDrinkThumb: String, 
-        strIngredient1:[],
-        strInstructions: String,
+        Drink:String,
+        DrinkThumb: String, 
+        Ingredients: [],
+        Instructions: String,
     },
     {timestamps: true}
 )
@@ -21,7 +21,7 @@ const drinkSchema = new mongoose.Schema(
 // An instance of a model is called a document.
 // Models are responsible for creating and reading documents from the underlying MongoDB Database
 // from here: https://mongoosejs.com/docs/models.html
-const Drinks = mongoose.model('Drinks', drinkSchema);
+const drinks = mongoose.model('Drinks', drinkSchema);
 
 //make this exportable to be accessed in `app.js`
-module.exports = Drinks;
+module.exports = drinks;
