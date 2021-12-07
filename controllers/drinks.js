@@ -6,7 +6,7 @@ const Drinks = require('../models/drinks.js');
 drinkRoutes.get('/', async (req, res) => {
 	try {
 		const allDrinks = await Drinks.find();
-		res.json(allRecipe);
+		res.json(allDrinks);
 	} catch (err) {
 		console.log(err);
 	}
@@ -14,7 +14,7 @@ drinkRoutes.get('/', async (req, res) => {
 
 // Create
 drinkRoutes.post('/', (req, res) => {
-	Recipes.create(req.body, (err, recipe) => {
+	Drinks.create(req.body, (err, recipe) => {
 		if (err) {
 			res.sendStatus(400);
 		} else {

@@ -1,12 +1,17 @@
 
 const mongoose = require('./connection.js');
-const Drink = require ('../models/drinks.js');
+const Drinks = require ('../models/drinks.js');
+
+
+//         strDrink:String,
+//         strDrinkThumb: String, 
+//         strIngredient1:[],
+//         strInstructions: String,
 
 const drinkData = [
   {
     strDrink: "Afterglow",
-    strDrinkThumb:
-      "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
+    strDrinkThumb:"https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
     strIngredient1: ["Grenadine", "Orange juice", "Pineapple juice"],
     strInstructions: "Mix. Serve over ice.",
   },
@@ -137,8 +142,8 @@ const drinkData = [
   },
 ];
 
-Drink.deleteMany({})
-  .then(() => Drink.insertMany(drinkData))
+Drinks.deleteMany({})
+  .then(() => Drinks.insertMany(drinkData))
   .then((recipes) => {
     console.log("Drinks deleted");
     console.log("seed Drinks added to database: " + recipes);
@@ -146,11 +151,11 @@ Drink.deleteMany({})
   .catch(console.error)
   .finally(() => process.exit());
 
-// Drinks.create(manyFood, (error, food) => {
+// Drinks.insertMany(drinkData, (error, food) => {
 //     if (error) {
 //         console.log(error);
 //     } else {
-//         console.log(food);
+//         console.log(drinkData, food);
 //     }
 //     db.close();
 // });
