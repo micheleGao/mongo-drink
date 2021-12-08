@@ -5,14 +5,15 @@ const Drinks = require('../models/drinks.js');
 // const seedData = require('../db/seed');
 
 //seeding --commented out so i dont reseed.
-// drinkRoutes.get('/seed', async (req,res) => {
-//     try {
-//       const newData = Drinks.create(drinkData);
-//       console.log(newData)
-//     } catch(err) {
-//       console.log(err)
-//     }
-// })
+drinkRoutes.get('/seed', async (req,res) => {
+    try {
+      const newData = Drinks.create(drinkData);
+      console.log(newData)
+    } catch(err) {
+      console.log(err)
+    }
+	db.close();
+})
 
 // Index
 drinkRoutes.get('/', async (req, res) => {
@@ -27,11 +28,21 @@ drinkRoutes.get('/', async (req, res) => {
 // Create
 drinkRoutes.post('/', (req, res) => {
 	Drinks.create(req.body, (err, recipe) => {
-		if (err) {
-			res.sendStatus(400);
-		} else {
-			res.status(201).json(recipe);
+		try{
+			const createdData = Drinks.create(Drinks);
+			res.send(createdData)
+		}catch(err){
+			if (err) {
+				res.sendStatus(400);
+			} else {
+				res.status(201).json(recipe);
+			}
 		}
+		// if (err) {
+		// 	res.sendStatus(400);
+		// } else {
+		// 	res.status(201).json(recipe);
+		// }
 	});
 });
 
