@@ -2,7 +2,7 @@ const express = require('express');
 const drinks = require('../models/drinks.js');
 const drinkRoutes = express.Router();
 const Drinks = require('../models/drinks.js');
-const seedData = require('../db/seed');
+// const seedData = require('../db/seed');
 
 //seeding --commented out so i dont reseed.
 // drinkRoutes.get('/seed', async (req,res) => {
