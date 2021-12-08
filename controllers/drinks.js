@@ -5,14 +5,14 @@ const Drinks = require('../models/drinks.js');
 const seedData = require('../db/seed');
 
 //seeding --commented out so i dont reseed.
-drinkRoutes.get('/seed', async (req,res) => {
-    try {
-      const newData = Drinks.create(drinkData);
-      console.log(newData)
-    } catch(err) {
-      console.log(err)
-    }
-})
+// drinkRoutes.get('/seed', async (req,res) => {
+//     try {
+//       const newData = Drinks.create(drinkData);
+//       console.log(newData)
+//     } catch(err) {
+//       console.log(err)
+//     }
+// })
 
 // Index
 drinkRoutes.get('/', async (req, res) => {
