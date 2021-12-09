@@ -35,6 +35,8 @@ app.use('/drinks', drinkRoutes);
 // START SERVER
 //=============================================================================
 
+module.exports = server;
+
 app.listen(PORT, () => {
 	console.log(`✅  app listening on port: ${PORT}`);
 });
