@@ -13,7 +13,8 @@ const db = mongoose.connection;
 //connect to mongo
 mongoose.connect(
     // "https://afternoon-plateau-17980.herokuapp.com/",
-    "mongodb://localhost:3000/drinks",
+     "mongodb://localhost:3000/drinks",
+    // mongoURI, 
     {
         useNewUrlParser:true,
         useUnifiedTopology: true,
