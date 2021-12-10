@@ -2,6 +2,7 @@ const mongoose = require('../db/connection');
 //const mongoose = require('mongoose'); // require mongoose
 //const Schema = mongoose.Schema; // create a shorthand for the mongoose Schema constructor
 
+
 //create a new schema 
 //this will define the shape of the documents
 
